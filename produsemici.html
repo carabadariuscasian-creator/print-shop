@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Obiecte Mici - Bio Print</title>
+    <style>
+        body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 50px; margin: 0; overflow-x: hidden; }
+        body::before { content: "🌿"; position: fixed; top: -50px; left: -50px; font-size: 20em; opacity: 0.2; z-index: -1; filter: drop-shadow(0 0 30px #2ecc71); }
+        body::after { content: "🍃"; position: fixed; bottom: -50px; right: -50px; font-size: 18em; opacity: 0.15; z-index: -1; filter: drop-shadow(0 0 25px #27ae60); }
+        .back { color: #888; text-decoration: none; border: 2px solid #333; padding: 10px 20px; border-radius: 15px; transition: 0.3s; }
+        .back:hover { color: #fff; border-color: #2ecc71; box-shadow: 0 0 15px #2ecc71; }
+        h1 { font-size: 3.5em; text-transform: lowercase; letter-spacing: 5px; text-shadow: 0 0 20px #2ecc71; }
+        .grid { display: flex; justify-content: center; gap: 30px; margin-top: 50px; flex-wrap: wrap; }
+        .card { border: 3px solid #333; border-radius: 40px; padding: 25px; width: 230px; background: rgba(15, 15, 15, 0.8); backdrop-filter: blur(10px); transition: 0.4s; }
+        .card:hover { border-color: #2ecc71; transform: translateY(-10px); box-shadow: 0 10px 30px rgba(46, 204, 113, 0.4); }
+        .card img { width: 100%; height: 190px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(46, 204, 113, 0.5)); }
+        .price { color: #2ecc71; font-size: 1.8em; font-weight: bold; display: block; margin: 15px 0; }
+        button { background: #fff; border: none; padding: 15px; border-radius: 18px; font-weight: bold; cursor: pointer; width: 100%; transition: 0.3s; }
+        button:hover { background: #2ecc71; color: #fff; box-shadow: 0 0 20px #2ecc71; }
+    </style>
+</head>
+<body>
+    <a href="homepage.html" class="back">← înapoi</a>
+    <h1>obiecte mici</h1>
+    <div class="grid">
+        <div class="card"><img src="1.png"><h3>inel rotitor</h3><span class="price">5 lei</span><button onclick="comanda('inel rotitor (5 lei)')">comandă</button></div>
+        <div class="card"><img src="2.png"><h3>omida flexibila</h3><span class="price">7 lei</span><button onclick="comanda('omida flexibila (7 lei)')">comandă</button></div>
+        <div class="card"><img src="3.png"><h3>tete flexibil</h3><span class="price">10 lei</span><button onclick="comanda('tete flexibil (10 lei)')">comandă</button></div>
+        <div class="card"><img src="4.png"><h3>switch fidget</h3><span class="price">3 lei</span><button onclick="comanda('switch fidget (3 lei)')">comandă</button></div>
+    </div>
+    <script>
+        function comanda(p) { 
+            localStorage.clear(); 
+            localStorage.setItem('produsAles', p); 
+            window.location.href = 'paginafinala.html'; 
+        }
+    </script>
+</body>
+</html>

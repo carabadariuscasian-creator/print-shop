@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Obiecte Mari - Bio Print</title>
+    <style>
+        body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 50px; margin: 0; overflow-x: hidden; }
+        
+        /* Plante colțuri cu glow verde smarald */
+        body::before { content: "🌿"; position: fixed; top: -50px; left: -50px; font-size: 20em; opacity: 0.15; z-index: -1; filter: drop-shadow(0 0 30px #27ae60); }
+        body::after { content: "🍃"; position: fixed; bottom: -50px; right: -50px; font-size: 18em; opacity: 0.15; z-index: -1; filter: drop-shadow(0 0 25px #27ae60); }
+
+        .back { color: #888; text-decoration: none; border: 2px solid #333; padding: 10px 20px; border-radius: 15px; transition: 0.3s; background: rgba(0,0,0,0.5); }
+        .back:hover { color: #fff; border-color: #27ae60; box-shadow: 0 0 15px #27ae60; }
+
+        h1 { font-size: 3.5em; text-shadow: 0 0 20px #27ae60; margin: 40px 0; letter-spacing: 3px; }
+
+        .grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        
+        .card { 
+            border: 3px solid #333; border-radius: 40px; padding: 25px; width: 230px; 
+            background: rgba(15, 15, 15, 0.85); backdrop-filter: blur(10px); 
+            transition: all 0.4s ease; 
+        }
+        .card:hover { border-color: #27ae60; transform: translateY(-10px); box-shadow: 0 10px 30px rgba(39, 174, 96, 0.4); }
+
+        .card img { 
+            width: 100%; height: 190px; object-fit: contain; 
+            filter: drop-shadow(0 0 15px rgba(39, 174, 96, 0.6)); transition: 0.3s;
+        }
+        .card:hover img { filter: drop-shadow(0 0 25px rgba(39, 174, 96, 0.9)); }
+
+        h3 { font-size: 1.4em; margin: 15px 0 5px 0; text-transform: lowercase; }
+        .price { color: #27ae60; font-size: 1.8em; font-weight: bold; display: block; margin-bottom: 20px; }
+        
+        button { 
+            background: #fff; color: #000; border: none; padding: 15px; border-radius: 18px; 
+            font-weight: bold; cursor: pointer; width: 100%; transition: 0.3s; 
+        }
+        button:hover { background: #27ae60; color: #fff; box-shadow: 0 0 20px #27ae60; }
+    </style>
+</head>
+<body>
+
+    <a href="homepage.html" class="back">← înapoi</a>
+    <h1>obiecte mari</h1>
+
+    <div class="grid">
+        <div class="card">
+            <img src="9.png">
+            <h3>copac decorativ</h3>
+            <span class="price">50 lei</span>
+            <button onclick="comanda('copac decorativ (50 lei)')">comandă</button>
+        </div>
+
+        <div class="card">
+            <img src="10.png">
+            <h3>dragon flexibil</h3>
+            <span class="price">60 lei</span>
+            <button onclick="comanda('dragon flexibil (60 lei)')">comandă</button>
+        </div>
+
+        <div class="card">
+            <img src="11.png">
+            <h3>suport casti</h3>
+            <span class="price">45 lei</span>
+            <button onclick="comanda('suport casti (45 lei)')">comandă</button>
+        </div>
+
+        <div class="card">
+            <img src="12.png">
+            <h3>vaza</h3>
+            <span class="price">70 lei</span>
+            <button onclick="comanda('vaza (70 lei)')">comandă</button>
+        </div>
+    </div>
+
+    <script>
+        function comanda(produs) {
+            localStorage.removeItem('produsAles'); 
+            localStorage.setItem('produsAles', produs);
+            window.location.href = 'paginafinala.html';
+        }
+    </script>
+</body>
+</html>

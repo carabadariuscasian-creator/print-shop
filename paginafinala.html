@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmare Comandă - Bio Print</title>
+    <style>
+        body { 
+            background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            min-height: 100vh; margin: 0; overflow: hidden; position: relative;
+        }
+
+        /* Decor plante masive */
+        body::before { content: "🌿"; position: fixed; top: -50px; left: -50px; font-size: 20em; opacity: 0.2; z-index: -1; filter: drop-shadow(0 0 30px #2ecc71); }
+        body::after { content: "🍃"; position: fixed; bottom: -50px; right: -50px; font-size: 18em; opacity: 0.2; z-index: -1; filter: drop-shadow(0 0 30px #27ae60); }
+
+        .form-container { 
+            border: 3px solid #333; padding: 40px; border-radius: 40px; width: 380px; 
+            background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(15px);
+            box-shadow: 0 0 40px rgba(46, 204, 113, 0.3); text-align: center;
+        }
+
+        h2 { text-transform: lowercase; letter-spacing: 3px; text-shadow: 0 0 15px #2ecc71; margin-bottom: 25px; }
+
+        #produs-ales { 
+            color: #2ecc71; font-weight: bold; font-size: 1.6em; 
+            margin-bottom: 30px; padding: 15px; border: 2px dashed #2ecc71; border-radius: 20px;
+            text-shadow: 0 0 10px rgba(46, 204, 113, 0.5); text-transform: lowercase;
+        }
+
+        input, textarea { 
+            width: 100%; padding: 15px; margin: 10px 0; border-radius: 18px; 
+            border: 2px solid #222; background: #000; color: #fff; box-sizing: border-box; 
+            font-size: 1em; transition: 0.3s;
+        }
+        
+        input:focus, textarea:focus { border-color: #2ecc71; outline: none; box-shadow: 0 0 10px rgba(46, 204, 113, 0.2); }
+
+        button { 
+            background: #2ecc71; color: #000; border: none; padding: 20px; width: 100%; 
+            border-radius: 20px; font-weight: bold; cursor: pointer; font-size: 1.2em; 
+            margin-top: 20px; transition: 0.3s; text-transform: lowercase;
+        }
+        
+        button:hover { background: #fff; transform: scale(1.02); box-shadow: 0 0 25px #2ecc71; }
+
+        .back-link { display: block; margin-top: 20px; color: #555; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .back-link:hover { color: #fff; }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>confirmare</h2>
+        
+        <div id="produs-ales">se încarcă...</div>
+
+        <form action="https://formspree.io/f/mqeykdnp" method="POST">
+            <input type="hidden" name="Produs" id="hidden-input">
+            
+            <input type="text" name="Nume" placeholder="numele tău" required>
+            <input type="text" name="Clasa" placeholder="clasa (ex: 7B)" required>
+            
+            <textarea name="Detalii" rows="3" placeholder="alte detalii sau cerințe pentru comanda ta..."></textarea>
+            
+            <button type="submit">trimite comanda</button>
+            <a href="homepage.html" class="back-link">anulează</a>
+        </form>
+    </div>
+
+    <script>
+        const produs = localStorage.getItem('produsAles');
+        if (produs) {
+            document.getElementById('produs-ales').innerText = produs;
+            document.getElementById('hidden-input').value = produs;
+        } else {
+            document.getElementById('produs-ales').innerText = "nu ai ales nimic";
+        }
+    </script>
+
+</body>
+</html>

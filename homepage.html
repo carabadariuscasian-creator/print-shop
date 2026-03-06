@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>3D Lab Store - Bio Digital</title>
+    <style>
+        body { 
+            background-color: #000; 
+            color: #fff; 
+            font-family: 'Segoe UI', sans-serif; 
+            text-align: center; 
+            padding: 0; 
+            margin: 0; 
+            overflow: hidden; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            position: relative;
+        }
+        
+        /* --- DECORAȚIUNI MASSIVE CU PLANTE (CSS DOAR) --- */
+        
+        /* Plantă Colț Stânga Sus */
+        body::before {
+            content: "🌿";
+            position: fixed;
+            top: -50px;
+            left: -50px;
+            font-size: 25em; /* Gigant */
+            opacity: 0.2; /* Mai vizibil */
+            transform: rotate(45deg);
+            z-index: -1;
+            filter: drop-shadow(0 0 30px #2ecc71); /* Glow intens */
+        }
+
+        /* Plantă Colț Dreapta Jos */
+        body::after {
+            content: "🍃";
+            position: fixed;
+            bottom: -60px;
+            right: -60px;
+            font-size: 20em;
+            opacity: 0.15;
+            transform: rotate(-30deg);
+            z-index: -1;
+            filter: drop-shadow(0 0 25px #27ae60);
+        }
+
+        /* Plantă Colț Dreapta Sus */
+        .decor-tr {
+            content: "🌿";
+            position: fixed;
+            top: -40px;
+            right: -40px;
+            font-size: 18em;
+            opacity: 0.12;
+            transform: rotate(135deg);
+            z-index: -1;
+            filter: drop-shadow(0 0 20px #2ecc71);
+        }
+
+        /* Plantă Colț Stânga Jos */
+        .decor-bl {
+            content: "🍃";
+            position: fixed;
+            bottom: -50px;
+            left: -50px;
+            font-size: 22em;
+            opacity: 0.18;
+            transform: rotate(210deg);
+            z-index: -1;
+            filter: drop-shadow(0 0 28px #27ae60);
+        }
+
+        /* --- STILIZARE CONȚINUT --- */
+        h1 { 
+            font-size: 5em; 
+            text-transform: lowercase; 
+            letter-spacing: 8px; 
+            margin-bottom: 5px; 
+            text-shadow: 0 0 30px #2ecc71, 0 0 60px rgba(46, 204, 113, 0.5); 
+            position: relative;
+            z-index: 10;
+        }
+        
+        p { 
+            color: #aaa; 
+            margin-bottom: 60px; 
+            font-size: 1.4em; 
+            text-transform: lowercase;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .menu { 
+            display: flex; 
+            gap: 25px; 
+            position: relative;
+            z-index: 10;
+        }
+        
+        .btn { 
+            text-decoration: none; 
+            color: #fff; 
+            border: 3px solid #333; 
+            padding: 25px 50px; 
+            border-radius: 30px; 
+            font-weight: bold; 
+            font-size: 1.4em; 
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(10,10,10,0.8); 
+            backdrop-filter: blur(15px);
+            text-transform: lowercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover { 
+            border-color: #2ecc71; 
+            transform: scale(1.1) translateY(-5px); 
+            box-shadow: 0 15px 40px rgba(46, 204, 113, 0.5); 
+            background: rgba(46, 204, 113, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="decor-tr">🌿</div>
+    <div class="decor-bl">🍃</div>
+
+    <h1>3d lab store</h1>
+    <p>alege dimensiunea obiectului dorit</p>
+    
+    <div class="menu">
+        <a href="produsemici.html" class="btn">mici</a>
+        <a href="produsemedii.html" class="btn">medii</a>
+        <a href="produsemari.html" class="btn">mari</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Obiecte Medii - Bio Print</title>
+    <style>
+        body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 50px; margin: 0; overflow-x: hidden; }
+        /* Plante colțuri cu glow albastru */
+        body::before { content: "🌿"; position: fixed; top: -50px; left: -50px; font-size: 20em; opacity: 0.15; z-index: -1; filter: drop-shadow(0 0 30px #00d4ff); }
+        body::after { content: "🍃"; position: fixed; bottom: -50px; right: -50px; font-size: 18em; opacity: 0.15; z-index: -1; filter: drop-shadow(0 0 25px #00d4ff); }
+        .back { color: #888; text-decoration: none; border: 2px solid #333; padding: 10px 20px; border-radius: 15px; transition: 0.3s; background: rgba(0,0,0,0.5); }
+        .back:hover { color: #fff; border-color: #00d4ff; box-shadow: 0 0 15px #00d4ff; }
+        h1 { font-size: 3.5em; text-shadow: 0 0 20px #00d4ff; margin: 40px 0; }
+        .grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .card { border: 3px solid #333; border-radius: 40px; padding: 25px; width: 230px; background: rgba(15, 15, 15, 0.85); backdrop-filter: blur(10px); transition: 0.4s; }
+        .card:hover { border-color: #00d4ff; transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4); }
+        .card img { width: 100%; height: 190px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.6)); transition: 0.3s; }
+        h3 { font-size: 1.4em; margin: 15px 0 5px 0; }
+        .price { color: #00d4ff; font-size: 1.8em; font-weight: bold; display: block; margin-bottom: 20px; }
+        button { background: #fff; color: #000; border: none; padding: 15px; border-radius: 18px; font-weight: bold; cursor: pointer; width: 100%; transition: 0.3s; }
+        button:hover { background: #00d4ff; color: #fff; box-shadow: 0 0 20px #00d4ff; }
+    </style>
+</head>
+<body>
+    <a href="homepage.html" class="back">← înapoi</a>
+    <h1>obiecte medii</h1>
+    <div class="grid">
+        <div class="card"><img src="5.png"><h3>bila rasucitoare</h3><span class="price">15 lei</span><button onclick="comanda('bila rasucitoare (15 lei)')">comandă</button></div>
+        <div class="card"><img src="6.png"><h3>axolotl flexibil</h3><span class="price">15 lei</span><button onclick="comanda('axolotl flexibil (15 lei)')">comandă</button></div>
+        <div class="card"><img src="7.png"><h3>vaza mica</h3><span class="price">25 lei</span><button onclick="comanda('vaza mica (25 lei)')">comandă</button></div>
+        <div class="card"><img src="8.png"><h3>spiral fidget</h3><span class="price">15 lei</span><button onclick="comanda('spiral fidget (15 lei)')">comandă</button></div>
+    </div>
+    <script>
+        function comanda(p) { localStorage.removeItem('produsAles'); localStorage.setItem('produsAles', p); window.location.href = 'paginafinala.html'; }
+    </script>
+</body>
+</html>
